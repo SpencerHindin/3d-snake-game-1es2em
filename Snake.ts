@@ -9,12 +9,19 @@ class Snake {
     this.currentPosition = 0;
     this.currentDirection = 0;
   }
-move(squares:number) {
-if this.currentDirection <= 1;
+move(squares:number){
+if (this.currentDirection <= 1)
 return this.currentPosition + squares;
 else return this.currentPosition - squares;
 }
-
+turn(direction:number){
+  if (this.currentDirection = 1)
+  return this.currentDirection;
+  else return this.currentDirection = -1;
+}
+public get position() {
+  return this.currentPosition;
+}
  }
 
 export default Snake;

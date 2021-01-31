@@ -30,7 +30,7 @@ class App extends Component<AppProps, AppState> {
           OUTPUT: <br />
         </pre>
         {
-           // <SnakeTests />
+            <SnakeTests />
         }
         {
           // <DuckTests />
@@ -48,4 +48,6 @@ const greenSnake = new Snake();
 const maroonSnake = new Snake();
 greenSnake.move();
 maroonSnake.move();
+greenSnake.turn();
+maroonSnake.turn();
 
