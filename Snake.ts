@@ -7,17 +7,13 @@ class Snake {
   public currentDirection: number;
   constructor() {
     this.currentPosition = 0;
-    this.currentDirection = 0;
+    this.currentDirection = 1;
   }
-move(squares:number){
-if (this.currentDirection <= 1)
-return this.currentPosition + squares;
-else return this.currentPosition - squares;
+public move(squares:number){
+this.currentPosition += this.currentDirection * squares;
 }
-turn(direction:number){
-  if (this.currentDirection = 1)
-  return this.currentDirection;
-  else return this.currentDirection = -1;
+public turn() {
+ this.currentPosition *= -1;
 }
 public get position() {
   return this.currentPosition;
