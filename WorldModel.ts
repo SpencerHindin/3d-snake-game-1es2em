@@ -1,7 +1,7 @@
 import Snake from "./Snake";
 
-class worldModel {
-  _snake : snake;
+class WorldModel {
+  _snake : Snake;
 
   constructor(s: Snake) {
     this._snake = s;

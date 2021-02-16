@@ -5,6 +5,7 @@ import './style.css';
 import display from './display';
 import Snake from './Snake';
 import SnakeTests from './SnakeTests';
+import WorldModel from './WorldModel';
 
 interface AppProps { }
 interface AppState {
@@ -43,11 +44,36 @@ class App extends Component<AppProps, AppState> {
 render(<App />, document.getElementById('root'));
 
 // Add display statements below
+
+let snake = new Snake();
+
+let world = new WorldModel(snake);
+
+display(
+  "Snake is at position " +
+  world.snake.currentLocation.x +
+   ", " +
+  world.snake.currentLocation.y
+);
+
+world.update(2);
+display("I moved by 2");
+display(
+  "Snake is at position " +
+  world.snake.currentLocation.x +
+  ", " +
+  world.snake.currentLocation.y
+);
+
+world.snake.turnLeft();
+world.update(1);
+display("I turned left and moved 1");
+display(
+  "Snake is at position " +
+  world.snake.currentLocation.x +
+  ", " +
+  world.snake.currentLocation.y
+);
 //display("Let's get started with React TypeScript!");
-const greenSnake = new Snake();
-const maroonSnake = new Snake();
-greenSnake.move();
-maroonSnake.move();
-greenSnake.turn();
-maroonSnake.turn();
+
 
