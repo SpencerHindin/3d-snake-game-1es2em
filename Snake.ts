@@ -1,51 +1,41 @@
 import display from './display';
-
+import Point from "./Point";
 // place your code on line 5 above the export statement below
 
-class Point {
-private xcoord: number;
-private ycoord: number;
-public constuctor() {
-this.xcoord = xcoord;
-this.ycoord = ycoord;
-}
-  public get Point() {
-  return (this.xcoord, this.ycoord);
-  }
-}
 class Snake {
-  private currentPosition: number;
-  private currentDirection: number;
+  currentDirection: number;
+  currentLocation: Point;
+
   constructor() {
-    this.currentPosition = 0;
+    this.currentLocation = new Point(0,0);
     this.currentDirection = 1;
   }
-public move(squares:number){
-this.currentPosition += this.currentDirection * squares;
-if (this.position = new Point(this.position.x, this.position.y))
-}
-public turn() {
- this.currentPosition *= -1;
-}
-public get position() {
-  return this.currentPosition;
+  turnLeft( ) {
+    this.currentDirection--;
+    if (this.currentDirection == 0) this.currentDirection = 4;
   }
-  set newPoint (initalPoint:number) {
-    this.xcoord = 0;
-    this.ycoord = 0;
+  turnRight( ) {
+    this.currentDirection++;
+    if (this.currentDirection == 5) this.currentDirection = 1;
   }
-  public turnLeft () {
-    if (this.xcoord < 0) display ("Left");
-    else if (this.ycoord < 0) display ("Down");
-    else if (this.xcoord > 0) display ("Right")
-    else display ("Up")
+move (steps: number) {
+  let x = this.currentLocation.x;
+  let y = this.currentLocation.y;
+
+  if (this.currentDirection == 1) {
+    y += steps;
   }
-  public turnRight () {
-    if (this.xcoord > 0) display ("Right")
-    else if (this.xcoord < 0) display ("Left")
-    else if (this.ycoord < 0) display ("Down")
-    else display ("Up")
+  if (this.currentDirection == 2) {
+    x += steps;
   }
+  if (this.currentDirection == 3) {
+    y -= steps;
+  }
+  if(this.currentDirection == 4) {
+    x -= steps;
+  }
+  this.currentLocation = new Point(x,y);
+ }
 }
 
 export default Snake;
