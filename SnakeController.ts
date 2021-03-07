@@ -1,32 +1,27 @@
+import WorldModel from "./WorldModel";
 import Snake from "./Snake";
 
 class SnakeController {
-   _World: WorldModel;
-   _Snake: Snake;
-   snakeWorld: snakeWorld;
-   slitherer: slitherer;
+  snakeWorld: WorldModel;
+  slitherer: Snake;
 
-constructor(w: WorldModel, s: Snake) {
-  this._World = w
-  this._Snake = s
-}
-turnSnakeLeft() {
-slitherer.snake.turnSnakeLeft;
-}
-turnSnakeRight() {
-slitherer.snake.turnSnakeRight;
-}
-get snakePosition() {
-  return this.snakePosition;
-}
-get snakeDirection() {
-  return this.direction;
-}
-get WorldWidth() {
-  return this.width;
-}
-get WorldHeight() {
-  return this.height;
-}
+  public constructor(world: WorldModel, snake: Snake) {
+    this.snakeWorld = world;
+    this.slitherer = snake;
+  }
+
+  public turnSnakeLeft() {
+    this.slitherer.turnLeft();
+  }
+  public turnSnakeRight() {
+    this.slitherer.turnRight();
+  }
+
+  get snakePosition() {
+    return this.slitherer.currentPosition;
+  }
+  get snakeDirection() {
+    return this.slitherer.currentDirection;
+  }
 }
 export default SnakeController;
