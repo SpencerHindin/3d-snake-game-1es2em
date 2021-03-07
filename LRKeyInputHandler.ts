@@ -7,3 +7,5 @@ class LRKeyInputHandler{
     wasRightArrowPushed !=;
   }
 }
+
+export default LRKeyInputHandler;

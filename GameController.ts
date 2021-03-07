@@ -20,7 +20,9 @@ class GameController() {
   run(){
   this.lastTime = 0;
   }
-  updateFrame(){
+  updateFrame(requestAnimationFrame: GameController){
     
   }
 }
+
+export default HumanPlayer;

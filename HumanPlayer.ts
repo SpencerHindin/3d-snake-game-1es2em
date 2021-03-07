@@ -11,3 +11,5 @@ class HumanPlayer() {
   this.sc = SnakeController;
   }
 }
+
+export default HumanPlayer;
