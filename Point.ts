@@ -2,7 +2,7 @@ class Point {
   xcoord: number;
   ycoord: number;
 
-  constructor(x: number, y: number) {
+  public constructor(x: number, y: number) {
     this.xcoord = x;
     this.ycoord = y;
   }
@@ -13,6 +13,8 @@ class Point {
   get y() {
     return this.ycoord;
   }
+  public equals(p: Point): boolean {
+    return this.xcoord == p.x && this.ycoord == p.y;
+  }
 }
-
 export default Point;
